@@ -7,6 +7,8 @@ before_install:
   - brew outdated xctool || brew upgrade xctool
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
+  # Grant access to Contacts
+  - sqlite3 ~/"Library/Application Support/com.apple.TCC/TCC.db" "insert into access values('kTCCServiceAddressBook','com.kallisys.einstein',0,1,1,null,null)"
 script:
   - xcodebuild clean build -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx | xcpretty
   - xcodebuild test -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx -destination 'platform=OS X,arch=x86_64'
