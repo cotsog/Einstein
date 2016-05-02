@@ -12,3 +12,4 @@ before_install:
   - sudo killall tccd
 script:
   - xcodebuild build test -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein | xcpretty
+  - sleep 3
