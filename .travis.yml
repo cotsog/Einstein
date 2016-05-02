@@ -8,7 +8,7 @@ before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
   # Grant access to Contacts
-  - sqlite3 ~/"Library/Application Support/com.apple.TCC/TCC.db" "insert into access values('kTCCServiceAddressBook','com.apple.Terminal',0,1,1,null,null)"
+  - sqlite3 ~/"Library/Application Support/com.apple.TCC/TCC.db" "insert into access values('kTCCServiceAddressBook','/Users/travis/runner.rb',1,1,1,null,null)"
   - sudo killall tccd
 script:
   - xcodebuild clean build -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx | xcpretty
