@@ -13,3 +13,4 @@ before_install:
 script:
   - xcodebuild clean build -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx | xcpretty
   - xcodebuild test -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx -destination 'platform=OS X,arch=x86_64'
+  - sleep 300
