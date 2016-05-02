@@ -17,3 +17,5 @@ script:
   - echo "osascript -e 'tell application \"Terminal\" to close first window' & exit" >> xcodebuild.command
   - chmod +x xcodebuild.command
   - open xcodebuild.command &
+  - PID=$!
+  - wait $PID
