@@ -16,4 +16,4 @@ script:
   - echo "xcodebuild test -project _Build_/Xcode6/Einstein.xcodeproj -scheme Einstein -sdk macosx -destination 'platform=OS X,arch=x86_64'" >> xcodebuild.command
   - echo "osascript -e 'tell application \"Terminal\" to close first window' & exit" >> xcodebuild.command
   - chmod +x xcodebuild.command
-  - open -W -n xcodebuild.command
+  - open xcodebuild.command &
